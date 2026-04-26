@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-mirror-dark: #050505;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img, iframe, video {
+  max-width: 100%;
+}
+:root {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px rgba(0, 150, 255, 0.15);
+}
+
+.glow-purple {
+  box-shadow: 0 0 40px rgba(120, 0, 255, 0.15);
+}
+
+/* Hide scrollbar for clean aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+.text-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+::selection {
+  background: rgba(112, 0, 255, 0.4);
+  color: #ffffff;
+}
+
+.markdown-body p {
+  margin-bottom: 1.5rem;
+}
+
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(10vh) translateX(-10px);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--dot-opacity, 0.8);
+  }
+  90% {
+    opacity: var(--dot-opacity, 0.8);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(10px);
+    opacity: 0;
+  }
+}
+
+.animate-\\[float_linear_infinite\\] {
+  animation: float linear infinite;
+}
+.sketchfab-embed-wrapper iframe {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.sketchfab-embed-wrapper iframe.loaded {
+  opacity: 1;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes drift1 {
+  from { transform: translate(0px, 0px) scale(1); }
+  to { transform: translate(60px, 40px) scale(1.1); }
+}
+
+@keyframes drift2 {
+  from { transform: translate(0px, 0px) scale(1); }
+  to { transform: translate(-50px, -60px) scale(1.15); }
+}
+
+@keyframes drift3 {
+  from { transform: translate(0px, 0px) scale(1); }
+  to { transform: translate(30px, -40px) scale(0.9); }
+}
+
+@keyframes floatUpFade {
+  0% { opacity: 0; transform: translateY(0) translateX(-50%); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-120px) translateX(-50%); }
+}
+@keyframes typeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
