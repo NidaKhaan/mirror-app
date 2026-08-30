@@ -145,7 +145,7 @@ export default function Application({ onExit }: { onExit: () => void }) {
     setUserData(data);
     try {
       const res = await ai.models.generateContent({
-        model: 'gemini-1.5-flash',
+        model: 'openai/gpt-oss-120b',
         contents: `Analyze this person and return ONLY a JSON object (no markdown, no backticks):
 {
   "gapPercent": <number 0-100>,
@@ -786,7 +786,7 @@ function AppDashboard({ userData, setView, geminiAnalysis }: { userData: any; se
     const fetchQuote = async () => {
       try {
         const res = await ai.models.generateContent({
-          model: 'gemini-1.5-flash',
+          model: 'openai/gpt-oss-120b',
           contents: `You are Mirror. Write ONE brutally honest observation (2 sentences max) specific to this person.
 Goal: "${userData?.goal}" | Excuse: "${userData?.excuse}" | Fear: "${userData?.fear}" | Energy drain: "${userData?.energy}"
 Be specific to their answers. No generic phrases. No emojis. No quotes. No preamble.`,
@@ -1144,7 +1144,7 @@ Address them as ${userData?.name}. Be direct, perspective-shifting, personal. No
 
     
         const res = await ai.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'openai/gpt-oss-120b',
       contents: contentsForModel,
       config: { systemInstruction }
     });
@@ -1169,7 +1169,7 @@ Address them as ${userData?.name}. Be direct, perspective-shifting, personal. No
     setIsGeneratingRoadmap(true);
     try {
       const res = await ai.models.generateContent({
-        model: 'gemini-1.5-flash',
+        model: 'openai/gpt-oss-120b',
         contents: `Profile: Name: ${userData?.name} | Goal: ${userData?.goal} | Obstacle: ${userData?.discrepancy} | Excuse: ${userData?.excuse} | Fear: ${userData?.fear}
 Generate exactly 5 specific actionable daily tasks as a JSON array of strings. Return ONLY the JSON array.
 Example: ["Task 1","Task 2","Task 3","Task 4","Task 5"]`,

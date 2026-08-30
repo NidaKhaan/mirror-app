@@ -24,11 +24,11 @@ export const ai = {
       const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${process.env.GEMINI_API_KEY}`,
+          'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'llama-3.1-8b-instant',
+          model: 'openai/gpt-oss-120b',
           messages,
           max_tokens: 1000,
         }),
