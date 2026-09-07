@@ -380,7 +380,7 @@ function Landing({ onSelectPath }: { onSelectPath: (path: 'knows' | 'lost') => v
             </p>
             <div className="flex flex-col sm:flex-row gap-4 w-full animate-[fadeInUp_1.2s_ease-out] max-w-lg">
               <button onClick={() => onSelectPath('knows')}
-                className="group flex-1 p-6 bg-[#05050A]/80 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-[#0A0A14] hover:border-blue-500/50 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] transition-all duration-300 relative overflow-hidden text-left hover:-translate-y-1">
+                className="glow-idle-blue group flex-1 p-6 bg-[#05050A]/80 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-[#0A0A14] hover:border-blue-500/50 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] transition-all duration-300 relative overflow-hidden text-left hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute top-0 left-0 w-1 h-0 bg-blue-400 group-hover:h-full transition-all duration-300" />
                 <h3 className="text-lg font-display font-medium mb-2 relative z-10 flex items-center gap-2"><Crosshair size={16} className="text-blue-400" />I know my goal</h3>
@@ -388,7 +388,7 @@ function Landing({ onSelectPath }: { onSelectPath: (path: 'knows' | 'lost') => v
                 <div className="mt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-blue-400 opacity-50 group-hover:opacity-100 transition-opacity relative z-10">Initiate <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" /></div>
               </button>
               <button onClick={() => onSelectPath('lost')}
-                className="group flex-1 p-6 bg-[#05050A]/80 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-[#0A0A14] hover:border-purple-500/50 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)] transition-all duration-300 relative overflow-hidden text-left hover:-translate-y-1">
+                className="glow-idle-purple group flex-1 p-6 bg-[#05050A]/80 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-[#0A0A14] hover:border-purple-500/50 hover:shadow-[0_10px_30px_rgba(168,85,247,0.15)] transition-all duration-300 relative overflow-hidden text-left hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute top-0 left-0 w-1 h-0 bg-purple-400 group-hover:h-full transition-all duration-300" />
                 <h3 className="text-lg font-display font-medium mb-2 relative z-10 flex items-center gap-2"><Zap size={16} className="text-purple-400" />I am lost</h3>
@@ -451,9 +451,9 @@ function Landing({ onSelectPath }: { onSelectPath: (path: 'knows' | 'lost') => v
       viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.2 }}
       style={{ '--glow': item.shadow } as React.CSSProperties}
       className={`p-8 border border-white/5 bg-white/[0.02] rounded-3xl relative overflow-hidden group hover:-translate-y-2 hover:bg-white/[0.05] transition-all duration-500 cursor-default
-        ${item.color === 'blue' ? 'hover:border-blue-500/40 hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)]' : ''}
-        ${item.color === 'orange' ? 'hover:border-orange-500/40 hover:shadow-[0_15px_40px_rgba(249,115,22,0.2)]' : ''}
-        ${item.color === 'purple' ? 'hover:border-purple-500/40 hover:shadow-[0_15px_40px_rgba(168,85,247,0.2)]' : ''}
+        ${item.color === 'blue' ? 'glow-idle-blue hover:border-blue-500/40 hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)]' : ''}
+        ${item.color === 'orange' ? 'glow-idle-orange hover:border-orange-500/40 hover:shadow-[0_15px_40px_rgba(249,115,22,0.2)]' : ''}
+        ${item.color === 'purple' ? 'glow-idle-purple hover:border-purple-500/40 hover:shadow-[0_15px_40px_rgba(168,85,247,0.2)]' : ''}
       `}
     >
       {/* Inner glow overlay */}
@@ -642,7 +642,7 @@ function Onboarding({ path, onComplete }: { path: 'knows' | 'lost'; onComplete: 
           <button
             disabled={!name.trim()}
             onClick={() => setStep(0)}
-            className="w-full py-4 text-xs font-bold uppercase tracking-widest bg-white text-black rounded-xl hover:bg-white/90 disabled:opacity-25 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-3 mt-2"
+            className="glow-btn w-full py-4 text-xs font-bold uppercase tracking-widest bg-white text-black rounded-xl hover:bg-white/90 disabled:opacity-25 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-3 mt-2"
           >
             Initiate Protocol <ArrowRight size={14} />
           </button>
@@ -725,7 +725,7 @@ function Onboarding({ path, onComplete }: { path: 'knows' | 'lost'; onComplete: 
           )}
           <div className="flex justify-end mt-2 max-w-lg mx-auto w-full">
             <button onClick={handleNext} disabled={currentValues.length === 0 || (currentValues.includes('Other') && !customValue.trim())}
-              className="group flex items-center gap-3 px-8 py-4 bg-white text-black font-bold text-[11px] uppercase tracking-widest rounded-full disabled:opacity-20 transition-all hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] hover:scale-[1.02] active:scale-[0.98]">
+              className="glow-btn group flex items-center gap-3 px-8 py-4 bg-white text-black font-bold text-[11px] uppercase tracking-widest rounded-full disabled:opacity-20 transition-all hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] hover:scale-[1.02] active:scale-[0.98]">
               Commit Truth <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
@@ -816,7 +816,7 @@ Be specific to their answers. No generic phrases. No emojis. No quotes. No pream
           </div>
         </div>
         <button onClick={() => setView('chat')}
-          className="group relative overflow-hidden bg-white text-black px-8 py-3 w-full md:w-auto rounded-full text-[11px] font-bold uppercase tracking-widest transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2">
+          className="glow-btn group relative overflow-hidden bg-white text-black px-8 py-3 w-full md:w-auto rounded-full text-[11px] font-bold uppercase tracking-widest transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] flex items-center justify-center gap-2">
           Initiate Mentoring <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
         </button>
       </header>
@@ -1360,7 +1360,7 @@ Example: ["Task 1","Task 2","Task 3","Task 4","Task 5"]`,
       className={`w-full bg-[#111118] border rounded-2xl pl-4 pr-12 py-3 text-white outline-none focus:bg-[#151520] transition-all resize-none overflow-hidden h-12 min-h-[48px] leading-[24px] text-sm placeholder:text-[13px] placeholder:truncate ${isRecording ? 'border-red-500/50 placeholder:text-red-400/70' : 'border-white/10 focus:border-blue-500/50'}`}
       rows={1} />
     <button onClick={handleSend} disabled={(!input.trim() && attachments.length === 0) || isLoading}
-      className="absolute right-2 top-1.5 w-9 h-9 flex items-center justify-center bg-white hover:bg-blue-100 text-black rounded-full disabled:opacity-30 transition-all">
+      className="glow-btn absolute right-2 top-1.5 w-9 h-9 flex items-center justify-center bg-white hover:bg-blue-100 text-black rounded-full disabled:opacity-30 transition-all">
       <Send size={15} className="-ml-0.5" />
     </button>
   </div>
